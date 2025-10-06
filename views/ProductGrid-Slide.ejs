@@ -1,0 +1,15 @@
+<% for (let i = 0; i < productsDetailsSlice_routerIndex.length; i += 3) { %>
+  <div class="slide">
+    <% productsDetailsSlice_routerIndex.slice(i, i + 3).forEach(product => { %>
+      <a href="/products/<%= product.slug %>" class="product-card-slide">
+        <img src="<%= product.productImage %>" alt="Image for <%= product.productstName %>" />
+        <div class="info">
+          <h3><%= product.productstName %></h3>
+          <p><%= product.productsprice %> kr</p>
+        </div>
+      </a>
+    <% }); %>
+  </div>
+<% } %>
+
+

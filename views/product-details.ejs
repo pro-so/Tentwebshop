@@ -1,0 +1,39 @@
+    <link rel="stylesheet" href="/stylesheets/styles.css" />
+    <link rel="stylesheet" href="/stylesheets/product-detalis-css.css" />
+  <main>
+    <div class="product-details-container">
+      <%- include('ProductGrid-Product-details', { productsDetails_veiwIndex: productsDetails_routerIndex }) %>
+    </div>
+
+    <div class="slideshow">
+      
+      <h1 style="text-align: center">Liknande produkter</h1>
+      <!-- Anchor targets -->
+      <span id="slide1" class="slide-anchor"></span>
+      <span id="slide2" class="slide-anchor"></span>
+      <span id="slide3" class="slide-anchor"></span>
+
+      <!-- Slides -->
+      <div class="slides-container">
+        <div class="slides">
+          <%- include('ProductGrid-Slide', { productsDetailsSlice_veiwIndex_routerIndex: productsDetailsSlice_routerIndex }) %>
+        </div>
+      </div>
+
+      <!-- Arrows for each slide -->
+      <div class="arrows arrows-1">
+        <a href="#slide3" class="arrow left">&#10094;</a>
+        <a href="#slide2" class="arrow right">&#10095;</a>
+      </div>
+      <div class="arrows arrows-2">
+        <a href="#slide1" class="arrow left">&#10094;</a>
+        <a href="#slide3" class="arrow right">&#10095;</a>
+      </div>
+      <div class="arrows arrows-3">
+        <a href="#slide2" class="arrow left">&#10094;</a>
+        <a href="#slide1" class="arrow right">&#10095;</a>
+      </div>
+    </div>
+
+    </main>
+

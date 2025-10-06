@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Details</title>
+    <link rel="stylesheet" href="/stylesheets/styles.css" />
+    <link rel="stylesheet" href="/stylesheets/product-detalis-css.css" />
+  </head>
+  <body>
+    <!--         heder -->
+    <div class="main-container-header">
+      <div class="container-left1">
+       <a href="/">
+          <img src="/images/moon-camp.png" alt="Företagslogotyp" class="logo" />
+        </a>
+      </div>
+
+      <div class="container-left2-right1">
+        <div class="search-bar-container">
+          <input type="text" placeholder=" 🔍 Sök produkt" class="search-bar" />
+        </div>
+
+        <div class="cart">
+          <a href="#" style="text-decoration: none; font-size: x-large"
+            ><span>❤️</span></a
+          >
+         <a
+              href="/checkout"
+              style="text-decoration: none; font-size: x-large"
+              ><span>🛒</span></a
+            >
+        </div>
+      </div>
+    </div>
+
+    <!--         end of heder -->
+
+    <!--         Navigation -->
+    <div class="nav-main">
+      <div>
+        <nav>
+          <a href="#">Nyheter</a>
+        </nav>
+      </div>
+
+      <div>
+        <nav>
+          <a href="#">Bästsäljare</a>
+        </nav>
+      </div>
+
+      <div>
+        <nav>
+          <a href="#">Sommer Tält</a>
+        </nav>
+      </div>
+
+      <div>
+        <nav>
+          <a href="#">Vinter Tält</a>
+        </nav>
+      </div>
+    </div>
+
+    <!--        end of Navigation -->
+
+    <div class="product-details-container">
+      <%- include('ProductGrid-Product-details', { productsDetails_veiwIndex: productsDetails_routerIndex }) %>
+    </div>
+
+    <div class="slideshow">
+      
+      <h1 style="text-align: center">Liknande produkter</h1>
+      <!-- Anchor targets -->
+      <span id="slide1" class="slide-anchor"></span>
+      <span id="slide2" class="slide-anchor"></span>
+      <span id="slide3" class="slide-anchor"></span>
+
+      <!-- Slides -->
+      <div class="slides-container">
+        <div class="slides">
+          <!-- Slide 1 -->
+          <div class="slide">
+            <a href="#" class="product-card-slide">
+              <img src="images/1.png" alt="tält image" />
+              <div class="info">
+                <h3>Pop-Up</h3>
+                <p>999 kr</p>
+              </div>
+            </a>
+            <a href="#" class="product-card-slide">
+              <img
+                src="images/2.png"
+                alt="tält image"
+                style="background-color: #000"
+              />
+              <div class="info">
+                <h3>Vandringstält</h3>
+                <p>1 599 kr</p>
+              </div>
+            </a>
+            <a href="#" class="product-card-slide">
+              <img src="images/3.jpg" alt="tält image" />
+              <div class="info">
+                <h3>Enkel tält</h3>
+                <p>299 kr</p>
+              </div>
+            </a>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="slide">
+            <a href="#" class="product-card-slide">
+              <img src="images/4.jpg" alt="tält image" />
+              <div class="info">
+                <h3>Extrema Tält</h3>
+                <p>1 799 kr</p>
+              </div>
+            </a>
+            <a href="#" class="product-card-slide">
+              <img src="images/5.jpg" alt="tält image" />
+              <div class="info">
+                <h3>Lyxigt Tält</h3>
+                <p>4 999 kr</p>
+              </div>
+            </a>
+            <a href="#" class="product-card-slide">
+              <img src="images/6.jpg" alt="tält image" />
+              <div class="info">
+                <h3>Night Tält</h3>
+                <p>599 kr</p>
+              </div>
+            </a>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="slide">
+            <a href="#" class="product-card-slide">
+              <img src="images/7.jpg" alt="tält image" />
+              <div class="info">
+                <h3>Easy Tält</h3>
+                <p>299 kr</p>
+              </div>
+            </a>
+            <a href="#" class="product-card-slide">
+              <img src="images/tent-4534202_640.jpg" alt="tält image" />
+              <div class="info">
+                <h3>Fun Time Tält</h3>
+                <p>249 kr</p>
+              </div>
+            </a>
+            <a href="#" class="product-card-slide">
+              <img src="images/output7.jpg" alt="tält image" />
+              <div class="info">
+                <h3>Cosy Tält</h3>
+                <p>6 219 kr</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Arrows for each slide -->
+      <div class="arrows arrows-1">
+        <a href="#slide3" class="arrow left">&#10094;</a>
+        <a href="#slide2" class="arrow right">&#10095;</a>
+      </div>
+      <div class="arrows arrows-2">
+        <a href="#slide1" class="arrow left">&#10094;</a>
+        <a href="#slide3" class="arrow right">&#10095;</a>
+      </div>
+      <div class="arrows arrows-3">
+        <a href="#slide2" class="arrow left">&#10094;</a>
+        <a href="#slide1" class="arrow right">&#10095;</a>
+      </div>
+    </div>
+
+    <div class="container-extra-info">
+      <div class="extra-info">
+        <div>
+          <nav>🚚 Gratis frakt</nav>
+        </div>
+
+        <div>
+          <nav>🔄 Expressfrakt</nav>
+        </div>
+
+        <div>
+          <nav>💳 Säkra betalningar</nav>
+        </div>
+
+        <div>
+          <nav>📰 Nyheter varje dag</nav>
+        </div>
+      </div>
+    </div>
+
+    <!--accordion for mobile -->
+
+    <div class="accordion-mobile">
+      <input type="checkbox" id="Mina-Sidor" style="display: none" />
+      <label for="Mina-Sidor">Mina Sidor</label>
+      <div class="content-accordion-mobile">
+        <div><a href="#">Mina Ordrar</a></div>
+        <div><a href="admin.html">Mitt Konto</a></div>
+      </div>
+
+      <input type="checkbox" id="Shopping" style="display: none" />
+      <label for="Shopping">Shopping</label>
+      <div class="content-accordion-mobile">
+        <div><a href="#">Vinterjackor</a></div>
+        <div><a href="#">Puferjackor</a></div>
+        <div><a href="#">Kappa</a></div>
+        <div><a href="#">Trenchcoats</a></div>
+      </div>
+
+      <input type="checkbox" id="Kundtjänst" style="display: none" />
+      <label for="Kundtjänst">Kundtjänst</label>
+    </div>
+    <!-- end of accordion mobile -->
+
+    <!-- accordion for biggar screen -->
+
+    <div class="main-container-accordion">
+      <div class="left-container-accordion">
+        <div>
+          <nav>
+            <h2>Shopping</h2>
+          </nav>
+        </div>
+
+        <div>
+          <nav>
+            <a href="#"> Vinterjackor </a>
+          </nav>
+        </div>
+
+        <div>
+          <nav>
+            <a href="#"> Puferjackor </a>
+          </nav>
+        </div>
+
+        <div>
+          <nav>
+            <a href="#"> Kappa </a>
+          </nav>
+        </div>
+
+        <div>
+          <nav>
+            <a href="#"> Trenchcoats </a>
+          </nav>
+        </div>
+      </div>
+
+      <div class="right-container-accordion">
+        <div>
+          <nav>
+            <h2>Mina Sidor</h2>
+          </nav>
+        </div>
+
+        <div>
+          <nav>
+            <a href="#"> Mina Ordrar </a>
+          </nav>
+        </div>
+
+        <div>
+          <nav>
+            <a href="admin.html"> Mitt Konto </a>
+          </nav>
+        </div>
+      </div>
+    </div>
+    <!-- end of accordion for biggar screen -->
+    <footer>
+      © Somar Awwad
+      <br />
+      0739373714
+    </footer>
+  </body>
+</html>

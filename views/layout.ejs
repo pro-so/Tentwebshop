@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title><%= typeof title !== 'undefined' ? title : 'Your first tent' %></title>
+
+</head>
+
+
+  <!-- Header -->
+  <header>
+    <div class="main-container-header">
+      <div class="container-left1">
+        <a href="/">
+          <img src="/images/moon-camp.png" alt="Företagslogotyp" class="logo" />
+        </a>
+      </div>
+      <div class="container-left2-right1">
+        <div class="search-bar-container">
+          <form method="get" action="/search">
+            <input type="text" name="q" placeholder=" 🔍 Sök produkt" class="search-bar">
+          </form>
+        </div>
+        <div class="cart">
+          <a href="#" style="text-decoration: none; font-size: x-large"><span>❤️</span></a>
+          <a href="/cart" style="text-decoration: none; font-size: x-large"><span>🛒</span></a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navigation -->
+  <div class="nav-main">
+    <div><nav><a href="#">Bästsäljare</a></nav></div>
+    <div><nav><a href="#">Sommar Tält</a></nav></div>
+    <div><nav><a href="#">Vinter Tält</a></nav></div>
+  </div>
+<body>
+  <!--  Warning Message -->
+    
+  <% if (message && message !== '') { %>
+    <div class="message-box-warning" id="warningBox">
+      <%= message %>
+    </div>
+    <script>
+      setTimeout(() => {
+        const box = document.getElementById('warningBox');
+        if (box) {
+          box.classList.add('fade-out');
+          setTimeout(() => {
+            box.style.display = 'none';
+          }, 500);
+        }
+      }, 4000);
+    </script>
+  <% } %>
+
+  <!-- Page Content -->
+  <%- body %>
+</body>
+  <!-- Extra Info -->
+  <div class="container-extra-info">
+    <div class="extra-info">
+      <div><nav>🚚 Gratis frakt</nav></div>
+      <div><nav>🔄 Expressfrakt</nav></div>
+      <div><nav>💳 Säkra betalningar</nav></div>
+      <div><nav>📰 Nyheter varje dag</nav></div>
+    </div>
+  </div>
+
+  <!-- Accordion Mobile -->
+  <div class="accordion-mobile">
+    <input type="checkbox" id="Mina-Sidor" style="display: none" />
+    <label for="Mina-Sidor">Mina Sidor</label>
+    <div class="content-accordion-mobile">
+      <div><a href="#">Mina Ordrar</a></div>
+      <div><a href="/admin/products">Mitt Konto</a></div>
+    </div>
+
+    <input type="checkbox" id="Shopping" style="display: none" />
+    <label for="Shopping">Shopping</label>
+    <div class="content-accordion-mobile">
+      <div><a href="#">Vinter Tält</a></div>
+      <div><a href="#">Sommar Tält</a></div>
+      <div><a href="#">Enkel tält</a></div>
+      <div><a href="#">pop up tält</a></div>
+    </div>
+
+    <input type="checkbox" id="Kundtjänst" style="display: none" />
+    <label for="Kundtjänst">Kundtjänst</label>
+  </div>
+
+  <!-- Accordion Desktop -->
+  <div class="main-container-accordion">
+    <div class="left-container-accordion">
+      <nav><h2>Shopping</h2></nav>
+      <nav><a href="#">VinterTält</a></nav>
+      <nav><a href="#">Sommar Tält</a></nav>
+      <nav><a href="#">Enkel Tält</a></nav>
+      <nav><a href="#">pop up tält</a></nav>
+    </div>
+    <div class="right-container-accordion">
+      <nav><h2>Mina Sidor</h2></nav>
+      <nav><a href="#">Mina Ordrar</a></nav>
+      <nav><a href="/admin/products">Mitt Konto</a></nav>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    © Somar Awwad <br />
+    0739373714
+  </footer>
+
+
+</html>

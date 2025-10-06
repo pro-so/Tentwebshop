@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Administration</title>
+    <link rel="stylesheet" href="/stylesheets/styles.css" />
+    <link rel="stylesheet" href="/stylesheets/admin-styles.css" />
+    <link rel="stylesheet" href="/stylesheets/admin-new-product.css" />
+  </head>
+  <body>
+    <header class="header-admin">Administration</header>
+
+    <div class="page-container-admin">
+      <aside>
+        <h2>Produkter</h2>
+      </aside>
+
+      <main>
+        <h2>Ny produkt</h2>
+       
+        <form method="post" action="/admin/products/newProduct" enctype="multipart/form-data">
+        
+          <!-- Produktnamn -->
+<label for="admin_productBody_Name">Namn</label>
+<input
+  type="text"
+  id="admin_productBody_Name"
+  name="admin_productBody_Name"
+  maxlength="50"
+  required
+  placeholder="Ange namn"
+/>
+
+<!-- Pris -->
+<label for="admin_productBody_Price">Pris</label>
+<input
+  type="number"
+  id="admin_productBody_Price"
+  name="admin_productBody_Price"
+  required
+  placeholder="Ange pris"
+/>
+
+<!-- Typ -->
+<label for="admin_productBody_Type">Typ</label>
+<input
+  type="text"
+  id="admin_productBody_Type"
+  name="admin_productBody_Type"
+  required
+  placeholder="Ange produkttyp"
+/>
+
+<!-- Bild -->
+<label for="admin_productBody_ImageFile">Bild (fil)</label>
+<input
+  type="file"
+  id="admin_productBody_ImageFile"
+  name="admin_productBody_ImageFile"
+  accept="image/*"
+  required
+/>
+
+<!-- Beskrivning -->
+<label for="admin_productBody_Description">Beskrivning</label>
+<textarea
+  id="admin_productBody_Description"
+  name="admin_productBody_Description"
+  placeholder="Ange beskrivning"
+  required
+></textarea>
+
+<!-- Kort beskrivning -->
+<label for="admin_productBody_Short_description">Kort beskrivning</label>
+<textarea
+  id="admin_productBody_Short_description"
+  name="admin_productBody_Short_description"
+  placeholder="Ange kort beskrivning"
+  required
+></textarea>
+
+<!-- Rabatt -->
+<label for="admin_productBody_Discount">Rabatt (%)</label>
+<input
+  type="number"
+  value="0"
+  id="admin_productBody_Discount"
+  name="admin_productBody_Discount"
+  min="0" 
+  max="100"
+  placeholder="Ex: 10"
+/>
+
+<!-- Spotlight -->
+<label for="admin_productBody_IsSpots">Spotlight?</label>
+<select id="admin_productBody_IsSpots" name="admin_productBody_IsSpots">
+  <option value="0" >Nej</option>
+  <option value="1">Ja</option>
+</select>
+
+<!-- Hero -->
+<label for="admin_productBody_IsHero">Hero-produkt?</label>
+<select id="admin_productBody_IsHero" name="admin_productBody_IsHero">
+  <option value="0" >Nej</option>
+  <option value="1" >Ja</option>
+</select>
+
+<!-- Publiceringsdatum -->
+<label for="admin_productBody_DisplayedAt">Publiceringsdatum</label>
+<input
+  type="date"
+  id="admin_productBody_DisplayedAt"
+  name="admin_productBody_DisplayedAt"
+  required
+/>
+
+<!-- Nyhetsinfo -->
+<label for="admin_productBody_HotNews">Nyhetsinfo</label>
+<input
+  type="text"
+  id="admin_productBody_HotNews"
+  name="admin_productBody_HotNews"
+  placeholder="T.ex. Begränsat lager"
+/>
+
+<!-- Slug -->
+<label for="admin_productBody_Slug">Slug</label>
+<input
+  type="text"
+  id="admin_productBody_Slug"
+  name="admin_productBody_Slug"
+  placeholder="Ex: produkt-namn"
+/>
+
+<!-- Kategori -->
+<label for="admin_productBody_Category">Kategori</label>
+<select id="admin_productBody_Category" name="admin_productBody_Category" required>
+  <option value="summer" >summer</option>
+  <option value="winter" >winter</option>
+  <option value="other">other</option>
+</select>
+
+<!-- SKU -->
+<label for="admin_productBody_SKU">SKU</label>
+<input
+  type="text"
+  id="admin_productBody_SKU"
+  name="admin_productBody_SKU"
+  maxlength="9"
+  pattern="[A-Za-z]{3}-[0-9]{5}"
+  placeholder="Ex: ABC-12345"
+/>
+
+          </div>
+
+          <!-- Submit -->
+          <button type="submit" class="page-container-submit-btn">
+            Lägg till
+          </button>
+        </form>
+      </main>
+    </div>
+
+   
+  </body>
+</html>

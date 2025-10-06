@@ -1,0 +1,92 @@
+
+    <link rel="stylesheet" href="/stylesheets/styles.css" />
+    <link rel="stylesheet" href="/stylesheets/check-out-style.css" />
+    <main>
+ <!-- Mobile table -->
+    <h3 class="check-out-text-over frist-table-under-640px">Varukorgen</h3>
+    <table class="check-out-table-mobile">
+      <% if (cartItems && cartItems.length > 0) { %>
+        <% cartItems.forEach(item => { %>
+          <tr>
+            <td><%=item.Cart_quantity %></td>
+    <td>x&nbsp;<%= item.productstName %></td>
+      <td><%= item.productsprice * item.Cart_quantity %> SEK</td>
+      <td><form action="/kassa/delete" method="POST">
+      <input type="hidden" name="Cart_productBody_id" value="<%= item.Cart_product_id %>">
+      <button > Delete </button>
+       </form></td>
+          </tr>
+        <% }); %>
+      <% } else { %>
+        <tr>
+          <td colspan="2">Din kundvagn är tom.</td>
+        </tr>
+      <% } %>
+    </table>
+
+    <!-- Desktop table -->
+    <h3 class="check-out-text-over frist-table-over-640px">Varukorgen</h3>
+    <table class="check-out-table-large-screen">
+      <thead>
+        <tr>
+          <th>Produkt</th>
+          <th>Antal</th>
+          <th>Pris</th>
+          <th>Totalt</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% if (cartItems && cartItems.length > 0) { %>
+
+         <% cartItems.forEach(item => { %>
+  <tr>
+    <td><%= item.productstName %></td>
+    <td><%= item.Cart_quantity %></td>
+    <td><%= item.productsprice %> kr</td>
+    <td><%= item.productsprice * item.Cart_quantity %> kr</td>
+    <td><form action="/kassa/delete" method="POST">
+        <input type="hidden" name="Cart_productBody_id" value="<%= item.Cart_product_id %>">
+        <button > Delete </button>
+       </form></td>
+  </tr>
+   
+<% }); %>
+
+        <% } else { %>
+          <tr>
+            <td colspan="4">Din kundvagn är tom.</td>
+          </tr>
+        <% } %>
+      </tbody>
+    </table>
+      <form action="/kassa/checkout" method="POST">
+  <div class="check-out-customers-info-container">
+    <h3>Kunduppgifter</h3>
+    <p>Förnamn</p>
+    <input type="text" name="firstname" placeholder="kund namn" required />
+    <p>Efternamn</p>
+    <input type="text" name="lastname" placeholder="kund efternamn" required />
+    <p>E-post</p>
+    <input type="email" name="email" placeholder="Kund E-post" required />
+  </div>
+
+  <fieldset>
+    <legend>Adress</legend>
+    <div class="Adress-container">
+      <p>Gata</p>
+      <input type="text" name="street" placeholder=".... gatan" required />
+      <p>Postnummer</p>
+      <input type="number" name="postalCode" placeholder="Postnummer" required />
+      <input type="text" name="city" placeholder="..... köping/holm/borg/stad" required />
+    </div>
+  </fieldset>
+
+  <div class="newsletter">
+    <input type="checkbox" id="nyhetsbrev" name="newsletter" value="1" />
+    <label for="nyhetsbrev">Jag vill ta emot nyhetsbrev</label>
+  </div>
+
+  <button class="check-out-button" type="submit">Köp</button>
+</form>
+</main>

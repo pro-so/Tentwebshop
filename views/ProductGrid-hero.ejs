@@ -1,0 +1,19 @@
+<%
+  let count = 0;
+%>
+<% products_veiwIndex.forEach(product => { %>
+  <% if (product.products_is_hero == 1 && count < 1) { %>
+    
+<div class="hero-text-container">
+    <h1><%= product.productsShort_Description %></h1>
+        <p class="next-line"><%= product.productsDescription %></p>
+      </div>
+      <div class="hero-imag-container">
+  <a href="/products/<%= product.slug %>">
+    <img src="<%= product.productImage %>" alt="" class="hero-image" />
+  </a>
+</div>
+  <% } %>
+<% }) %>
+      
+

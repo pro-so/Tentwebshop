@@ -1,0 +1,15 @@
+id,
+ productstName,
+  productsprice,
+   productstype,
+    productImage, 
+    productsDescription,
+     productsShort_Description,
+      productsDiscount,
+       products_is_spots,
+        products_is_hero,
+         products_displayed_at, 
+         HotNewsInfo,
+          slug, 
+          productsCategory
+          productstSKU

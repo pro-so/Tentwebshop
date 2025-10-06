@@ -1,0 +1,38 @@
+<% productsDetails_veiwIndex.forEach(product => { %>
+ <div class="product-details-imag-container">
+  <img src="<%= product.productImage %>" alt="Bild på <%= product.productImage %>" class="product-details-image"/>
+        <div>
+          <!--  got his style from style.css-->
+          <input type="checkbox" class="heart-checkbox" />
+          <label class="heart-container"></label>
+          <!--  -->
+        </div>
+      </div>
+      
+      <div class="product-details-text-container">
+        <div class="product-details-text-place">
+          <h3><%= product.productstName %></h3>
+          <br>
+          <h3><%= product.productsDescription %></h3>
+          <br>
+          <h3><%= product.productsprice + "  "%> KR</h3>
+        </div>
+        <div class="button-product-details">
+          <form action="/cart" method="POST">
+           <input type="hidden" name="Cart_productBody_id" value="<%= product.id %>">
+           <input type="hidden" name="Cart_productBody_productstName" value="<%= product.productstName %>">
+           <input type="hidden" name="Cart_productBody_productstPrice" value="<%= product.productsprice %>">
+           <input type="number" name="Cart_quantityBody" value="1" min="1">
+          <button>Lägg i varukorg</button>
+          </form>
+
+        </div>
+      </div>
+
+
+
+<% }) %>
+      
+
+
+

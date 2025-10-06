@@ -1,0 +1,57 @@
+<%
+  const ProductGrid_daysNews = 7;
+  const now = new Date();
+  const Timestampnow = now.getTime() // Today's date in milliseconds from server
+  const DaysAgoTimestamp = Timestampnow - (ProductGrid_daysNews * 24 * 60 * 60 * 1000); // Today's date minus 7 days in milliseconds
+  //console.log("sevenDaysAgoTimestamp", DaysAgoTimestamp); 
+  // console.log("sevenDaysAgoTimestampnow", sevenDaysAgoTimestampnow);
+%>
+
+<% products_veiwIndex.forEach(product => { %>
+  <% if (product.products_is_spots == 0 && product.products_is_hero == 0) { 
+    let isNewProduct = false;
+    let product_Readytogopublic = false;
+    const displayedDate = new Date(product.products_displayed_at);// Convert the displayed date string to a Date object
+    const displayedDateDate = displayedDate.getTime(); // Get the displayed date string
+     if (!isNaN(displayedDateDate)  && displayedDateDate <= Timestampnow) {
+      // Check if the displayed date is a valid date and not in the future
+      product_Readytogopublic = true;
+      if ( displayedDateDate >= DaysAgoTimestamp){
+        // Check if the displayed date is within the last ...(DaysAgoTimestamp) days 
+          isNewProduct = true;
+       // console.log("databas time displayedDate", displayedDate);
+        //console.log("tody time from server Timestampnow", Timestampnow);
+       // console.log("databas time in mili displayedDate getTime", displayedDateDate);
+       // console.log("biggar or simmlar isNewProduct = displayedDateDate >= DaysAgoTimestamp; ", isNewProduct);
+        
+       // console.log("servertime - 7 in mill DaysAgoTimestamp", DaysAgoTimestamp);
+      }
+    }
+  %>
+  
+<% if ( product_Readytogopublic == true) { %>
+  
+  <a href="/products/<%= product.slug %>">
+    <div class="product-all-other-card">
+      <input type="checkbox" class="heart-checkbox" />
+      <label class="heart-container"></label>
+
+      <div>
+        <img src="<%= product.productImage %>" alt="Bild på <%= product.productstName %>" class="product-image"/>
+      </div>
+
+      <% if (isNewProduct) { %>
+        <div class="containerLatest-news">
+          <div class="last-news-style">Nyhet</div>
+          <div class="Latest-news next-line"><%=product.HotNewsInfo%></div>
+        </div>
+      <% } %>
+
+      <p><%= product.productstName %></p>
+      <p><%= product.productsprice %> SEK</p>
+      <p><%= product.productstype %></p>
+    </div>
+  </a>
+ <% } %>
+  <% } %>
+<% }) %>

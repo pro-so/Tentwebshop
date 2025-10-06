@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Administration</title>
+    <link rel="stylesheet" href="/stylesheets/styles.css" />
+    <link rel="stylesheet" href="/stylesheets/admin-styles.css" />
+    <style></style>
+  </head>
+  <body>
+    <header class="header-admin">Administration</header>
+
+    <div class="page-container-admin">
+      <aside>
+        <h2>Produkter</h2>
+      </aside>
+
+      <main>
+        <div class="top-bar-admin">
+          <h2>Produkter</h2>
+          <a
+            href="/admin/products/newProduct"
+            class="new-product-button-admin"
+            >Ny produkt</a>
+        </div>
+<div class="table-admin_container">
+        <table class="table-admin">
+          <thead>
+            <tr>
+              <th>productSKU</th>
+              <th>productstName</th>
+              <th>productsprice</th>
+              <th>productstype</th>
+              <th>productImage</th>
+              <th>productsDescription</th>
+              <th>productsShort_Description</th>
+              <th>productsDiscount</th>
+              <th>products_is_spots</th>
+              <th>products_is_hero</th>
+              <th>products_displayed_at</th>
+              <th>slug</th>
+              <th>productsCategory</th>
+              <th></th>
+
+            </tr>
+          </thead>
+          <tbody>
+         
+<% adminProducts.forEach(adminproduct => { %>
+        <tr>
+              <td><%=adminproduct.productSKU %></td>
+              <td style="overflow-y: scroll;" ><%=adminproduct.productstName %></td>
+              <td><%=adminproduct.productsprice %></td>
+              <td><%=adminproduct.productstype %></td>
+              <td style="overflow-y: scroll;"><%=adminproduct.productImage %></td>
+              <td style="overflow-y: scroll;"><%=adminproduct.productsDescription %></td>
+              <td style="overflow-y: scroll;"><%=adminproduct.productsShort_Description %></td>
+              <td><%=adminproduct.productsDiscount %></td>
+              <td><%=adminproduct.products_is_spots %></td>
+              <td><%=adminproduct.products_is_hero %></td>
+              <td ><%=adminproduct.products_displayed_at %></td>
+              <td style="overflow-y: scroll;"><%=adminproduct.slug %></td>
+              <td><%=adminproduct.productsCategory %></td>
+              <td >
+                <form action="/admin/products/delete" method="POST">
+                <input type="hidden" name="productBody_id" value="<%= adminproduct.id %>">
+                <button>🗑️</button>
+              </form>
+              </td>
+            </tr>
+<% }) %>
+          </tbody>
+        </table>
+      </main>
+    </div>
+</div>
+   
+  </body>
+</html>

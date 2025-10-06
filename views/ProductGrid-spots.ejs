@@ -1,0 +1,22 @@
+<%
+  let count = 0;
+%>
+<% products_veiwIndex.forEach(product => { %>
+  <% if (product.products_is_spots == 1 && count < 3) { %>
+    <%
+      count++;
+    %>
+    <div class="first-products">
+      <a href="/products/<%= product.slug %>">
+        <img src="<%= product.productImage %>" alt="Bild på <%= product.productstName %>" class="product-image-first" />
+      </a>
+      <div class="text-first-products">
+        <div>
+          <h3 style="text-shadow: 3px 3px black">
+            <%= product.productsShort_Description %>
+          </h3>
+        </div>
+      </div>
+    </div>
+  <% } %>
+<% }); %>

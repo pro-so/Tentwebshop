@@ -1,0 +1,288 @@
+@media (max-width: 639px) {
+  .check-out-table-large-screen,
+  .check-out-text-over.frist-table-over-640px {
+    display: none;
+  }
+  .check-out-text-over.frist-table-under-640px {
+    text-align: center;
+    margin-top: 70px;
+  }
+  .check-out-table-mobile {
+    margin: 30px auto;
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #171616;
+    box-shadow: 2px 2px #000000;
+    margin-bottom: 70px;
+  }
+
+  .check-out-table-mobile td:nth-of-type(1) {
+    width: 10%;
+    text-align: left;
+  }
+  .check-out-table-mobile td:nth-of-type(2) {
+    width: 80%;
+    text-align: left;
+  }
+
+  .check-out-table-mobile td:nth-of-type(3) {
+    width: 10%;
+    text-align: center;
+  }
+    .check-out-table-mobile  td:nth-of-type(4) button {
+    width: 70px;
+    height: 20px;
+    margin-right: 10PX;
+    margin-left: 10PX;
+    text-align: center;
+    background-color: rgba(106, 134, 123, 0.632);
+    color: rgb(247, 246, 243);
+    border: none;
+    border-radius: 5px;
+    box-shadow:
+      6px 6px 12px #1b1a1a;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  /* border between first product and second one */
+  .check-out-table-mobile tr:nth-of-type(2) {
+    border-bottom: 1px solid #0f0505;
+    border-collapse: collapse;
+  }
+  /* end of table */
+  /* customers info */
+  .check-out-customers-info-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, 1fr);
+    margin-bottom: 50px;
+  }
+  .check-out-customers-info-container h3 {
+    text-align: center;
+  }
+
+  .check-out-customers-info-container input[type="text"],
+  .check-out-customers-info-container input[type="email"] {
+    width: 100%;
+    height: 20px;
+    padding: 6px;
+    border: 1px solid #000;
+    border-radius: 50px;
+  }
+  /* end of customers info */
+  /* adress */
+  .Adress-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    gap: 10px;
+    grid-auto-flow: row;
+    width: 100%;
+    height: auto;
+  }
+  .Adress-container h3 {
+    text-align: center;
+  }
+  .Adress-container input[type="text"] {
+    grid-column: 1/-1;
+    width: 99%;
+    height: 20px;
+    padding: 6px;
+    border: 1px solid #000;
+    border-radius: 50px;
+  }
+  .Adress-container p {
+    grid-column: 1/-1;
+  }
+  .Adress-container input[type="number"] {
+    grid-column: 1/2;
+    width: 99%;
+    height: 20px;
+    padding: 6px;
+    border: 1px solid #000;
+    border-radius: 50px;
+  }
+  /* end of adress */
+
+  /* done  */
+}
+
+@media (min-width: 640px) {
+  .check-out-table-mobile,
+  .check-out-text-over.frist-table-under-640px {
+    display: none;
+  }
+  /* tabel */
+  .check-out-text-over.frist-table-over-640px {
+    text-align: center;
+    margin-top: 70px;
+  }
+
+  .check-out-table-large-screen {
+    margin: 30px auto;
+    width: 90%;
+    border-collapse: collapse;
+    border: 1px solid #171616;
+    box-shadow: 2px 2px #000000;
+    margin-bottom: 70px;
+  }
+  .check-out-table-large-screen th {
+    width: 23%;
+    background-color: rgba(106, 134, 123, 0.632);
+    text-align: left;
+  }
+  .check-out-table-large-screen td {
+    width: 23%;
+    text-align: left;
+  }
+  .check-out-table-large-screen td:nth-of-type(5) {
+    width: 5%;
+    text-align: left;
+  }
+    .check-out-table-large-screen td:nth-of-type(5) button {
+    width: 70px;
+    height: 20px;
+    margin-right: 10PX;
+    text-align: center;
+    background-color: rgba(106, 134, 123, 0.632);
+    color: rgb(247, 246, 243);
+    border: none;
+    border-radius: 5px;
+    box-shadow:
+      6px 6px 12px #1b1a1a;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  .check-out-table-large-screen tr:nth-child(even) {
+    background-color: rgba(176, 183, 164, 0.586);
+  }
+  /* end of tabel */
+
+  /* kund uppgifter */
+  .check-out-customers-info-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(5, 1fr);
+    gap: 10px 20px;
+  }
+  .check-out-customers-info-container h3 {
+    text-align: left;
+  }
+  /*  kund namn*/
+  .check-out-customers-info-container input[type="text"]:nth-of-type(1) {
+    width: 95%;
+    height: 20px;
+    padding: 6px;
+    border: 1px solid #000;
+    border-radius: 50px;
+    grid-column: 1/2;
+  }
+  /* kund efter namn */
+  .check-out-customers-info-container input[type="text"]:nth-of-type(2) {
+    width: 95%;
+    height: 20px;
+    padding: 6px;
+    border: 1px solid #000;
+    border-radius: 50px;
+    grid-column: 2/4;
+    grid-row: 3/4;
+  }
+  /* kund email */
+  .check-out-customers-info-container input[type="email"] {
+    width: 95%;
+    height: 20px;
+    padding: 6px;
+    border: 1px solid #000;
+    border-radius: 50px;
+    grid-column: 1/2;
+  }
+  /* text förnamn */
+  .check-out-customers-info-container p:nth-of-type(1) {
+    grid-column: 1/2;
+  }
+  /* text efternamn */
+  .check-out-customers-info-container p:nth-of-type(2) {
+    grid-column: 2/4;
+    grid-row: 2/3;
+  }
+  /* text e-post */
+  .check-out-customers-info-container p:nth-of-type(3) {
+    grid-column: 1/2;
+  }
+  /* end of kund uppgifter */
+  /* Adress */
+  .Adress-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    gap: 10px;
+    grid-auto-flow: row;
+    width: 100%;
+    height: auto;
+  }
+  .Adress-container h3 {
+    text-align: center;
+  }
+  /* gata */
+  .Adress-container input[type="text"]:nth-of-type(1) {
+    grid-column: 1/-1;
+    width: 99%;
+    height: 20px;
+    padding: 6px;
+    border: 1px solid #000;
+    border-radius: 50px;
+  }
+  /* Stad */
+  .Adress-container input[type="text"]:nth-of-type(3) {
+    grid-column: 1/3;
+    width: 99%;
+    height: 20px;
+    padding: 6px;
+    border: 1px solid #000;
+    border-radius: 50px;
+  }
+
+  .Adress-container p {
+    grid-column: 1/-1;
+  }
+  .Adress-container input[type="number"] {
+    grid-column: 1/2;
+    width: 99%;
+    height: 20px;
+    padding: 6px;
+    border: 1px solid #000;
+    border-radius: 50px;
+  }
+  /* end of Adress */
+
+  /* done  */
+}
+
+.newsletter {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  margin-top: 30px;
+}
+
+.check-out-button {
+  display: block;
+  margin: 0 auto;
+  margin-top: 30px;
+  width: 200px;
+  background-color: #88b725;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow:
+      6px 6px 12px #1b1a1a,
+      -6px -6px 12px #ffffff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  height: 50px;
+}

@@ -1,0 +1,23 @@
+
+<% adminProducts.forech (adminproduct => { %>
+        <tr>
+            
+              <td><%adminproduct.productstName %></td>
+              <td><%adminproduct.productsprice %></td>
+              <td><%adminproduct.productstype %></td>
+              <td><%adminproduct.productImage %></td>
+              <td><%adminproduct.productsDescription %></td>
+              <td><%adminproduct.productsShort_Description %></td>
+              <td><%adminproduct.productsDiscount %></td>
+              <td><%adminproduct.products_is_spots %></td>
+              <td><%adminproduct.products_is_hero %></td>
+              <td><%adminproduct.products_displayed_at %></td>
+              <td><%adminproduct.slug %></td>
+              <td><%adminproduct.productsCategory %></td>
+              <td><%adminproduct.productSKU %></td>
+              <td class="actions">
+                <a href="../../admin/products/new.html" title="Redigera">✎</a>
+                <a href="../../admin/products/new.html" title="Radera">🗑️</a>
+              </td>
+            </tr>
+<% }) %>

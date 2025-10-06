@@ -1,0 +1,28 @@
+  <link rel="stylesheet" href="/stylesheets/styles.css" />
+<main>
+    <!-- Hero Section -->
+    <div class="main-container-hero">
+     <%- include('ProductGrid-hero', { products_veiwIndex: products_routerIndex }) %>
+    </div>
+    <!-- End Hero Section -->
+
+    <!-- spots Products -->
+
+    <div class="container-products-first-products">
+
+       <%- include('ProductGrid-spots', { products_veiwIndex: products_routerIndex }) %>
+
+          </div> 
+    <!-- End First Products -->
+
+    <!-- All Other Products -->
+    <div class="container-all-other-products">
+      <%- include('ProductGrid', { products_veiwIndex: products_routerIndex }) %>
+    </div>
+    <!-- End All Other Products -->
+
+    <div class="info-banner">
+      <strong>Info:</strong> Vissa erbjudanden visas endast via köp i dator.
+    </div>
+
+   </main>

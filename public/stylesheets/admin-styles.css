@@ -1,0 +1,94 @@
+.header-admin {
+  background-color: #7b7878;
+  padding: 10px;
+  color: azure;
+  border-bottom: 1px solid #ccc;
+  text-align: left;
+  font-weight: bold;
+}
+.page-container-admin {
+  display: flex;
+  min-height: 100vh;
+}
+
+.page-container-admin aside {
+  width: 200px;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(214, 207, 207, 0),
+    rgb(87, 120, 82)
+  );
+  padding: 15px;
+}
+.page-container-admin main {
+  flex-grow: 1;
+  border: 2px solid black;
+  padding: 20px;
+}
+
+.top-bar-admin {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.new-product-button-admin {
+  background-color: #88b725;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 3px 3px black;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 200px;
+  height: 50px;
+}
+.table-admin_container {
+  width: 75vw;
+  height: 70vh;
+  overflow: scroll;
+resize: both;
+}
+
+.table-admin {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #171616;
+  border-collapse: collapse;
+  box-shadow: 2px 2px #000000;
+  
+}
+
+.table-admin th {
+  background-color: rgba(106, 134, 123, 0.632);
+  border: 1px solid #ccc;
+  padding: 8px 10px;
+  text-align: left;
+  max-width: 300px;
+  height: 30px;
+  word-break: break-all;
+   text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.table-admin td {
+  border: 1px solid #ccc;
+  text-align: left;
+  max-width: 300px;
+  height: 30px;
+  word-break: break-all;
+   text-overflow: ellipsis;
+  white-space: nowrap;
+  
+}
+.table-admin tr:nth-child(even) {
+  background-color: rgba(176, 183, 164, 0.586);
+  max-width: 300px;
+  height: 30px;
+  word-break: break-all;
+   text-overflow: ellipsis;
+  white-space: nowrap;
+}

@@ -1,0 +1,125 @@
+<% similarProducts.forEach(product => { %>
+  <% if (product.products_is_spots == 0 && product.products_is_hero == 1) { %>
+    
+<div class="hero-text-container">
+    <h1><%= product.productsShort_Description %></h1>
+        <p class="next-line"><%= product.productsDescription %></p>
+      </div>
+      <div class="hero-imag-container">
+  <a href="/products/<%= product.slug %>">
+    <img src="<%= product.productImage %>" alt="" class="hero-image" />
+  </a>
+</div>
+  <% } %>
+<% }) %>
+
+
+
+
+      
+      <h1 style="text-align: center">Liknande produkter</h1>
+      <!-- Anchor targets -->
+      <span id="slide1" class="slide-anchor"></span>
+      <span id="slide2" class="slide-anchor"></span>
+      <span id="slide3" class="slide-anchor"></span>
+
+      <!-- Slides -->
+      <div class="slides-container">
+        <div class="slides">
+          <!-- Slide 1 -->
+          <div class="slide">
+            <a href="#" class="product-card-slide">
+              <img src="images/1.png" alt="tält image" />
+              <div class="info">
+                <h3>Pop-Up</h3>
+                <p>999 kr</p>
+              </div>
+            </a>
+            <a href="#" class="product-card-slide">
+              <img
+                src="images/2.png"
+                alt="tält image"
+                style="background-color: #000"
+              />
+              <div class="info">
+                <h3>Vandringstält</h3>
+                <p>1 599 kr</p>
+              </div>
+            </a>
+            <a href="#" class="product-card-slide">
+              <img src="images/3.jpg" alt="tält image" />
+              <div class="info">
+                <h3>Enkel tält</h3>
+                <p>299 kr</p>
+              </div>
+            </a>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="slide">
+            <a href="#" class="product-card-slide">
+              <img src="images/4.jpg" alt="tält image" />
+              <div class="info">
+                <h3>Extrema Tält</h3>
+                <p>1 799 kr</p>
+              </div>
+            </a>
+            <a href="#" class="product-card-slide">
+              <img src="images/5.jpg" alt="tält image" />
+              <div class="info">
+                <h3>Lyxigt Tält</h3>
+                <p>4 999 kr</p>
+              </div>
+            </a>
+            <a href="#" class="product-card-slide">
+              <img src="images/6.jpg" alt="tält image" />
+              <div class="info">
+                <h3>Night Tält</h3>
+                <p>599 kr</p>
+              </div>
+            </a>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="slide">
+            <a href="#" class="product-card-slide">
+              <img src="images/7.jpg" alt="tält image" />
+              <div class="info">
+                <h3>Easy Tält</h3>
+                <p>299 kr</p>
+              </div>
+            </a>
+            <a href="#" class="product-card-slide">
+              <img src="images/tent-4534202_640.jpg" alt="tält image" />
+              <div class="info">
+                <h3>Fun Time Tält</h3>
+                <p>249 kr</p>
+              </div>
+            </a>
+            <a href="#" class="product-card-slide">
+              <img src="images/output7.jpg" alt="tält image" />
+              <div class="info">
+                <h3>Cosy Tält</h3>
+                <p>6 219 kr</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Arrows for each slide -->
+      <div class="arrows arrows-1">
+        <a href="#slide3" class="arrow left">&#10094;</a>
+        <a href="#slide2" class="arrow right">&#10095;</a>
+      </div>
+      <div class="arrows arrows-2">
+        <a href="#slide1" class="arrow left">&#10094;</a>
+        <a href="#slide3" class="arrow right">&#10095;</a>
+      </div>
+      <div class="arrows arrows-3">
+        <a href="#slide2" class="arrow left">&#10094;</a>
+        <a href="#slide1" class="arrow right">&#10095;</a>
+      </div>
+
+      
+

@@ -1,0 +1,71 @@
+    <link rel="stylesheet" href="/stylesheets/styles.css" />
+    <link rel="stylesheet" href="/stylesheets/check-out-style.css" />
+    <title>Orderbekräftelse</title>
+    <!-- Order Confirmation -->
+     <main>
+    <div class="confirmation-container">
+      <h2 class="check-out-text-over">Tack för din beställning!</h2>
+      <p>Din order har mottagits och behandlas nu.</p>
+<h3>Orderinformation</h3>
+<table class="check-out-table-large-screen">
+  <thead>
+    <tr>
+      <th>Produkt</th>
+      <th>Antal</th>
+      <th>Pris</th>
+      <th>Totalt</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% let totalSum = 0; %>
+    <% order_confirmation.forEach(item => { 
+         const itemTotal = item.orderQuantity * item.orderPrice;
+         totalSum += itemTotal;
+    %>
+      <tr>
+        <td><%= item.orderproductName %></td>
+        <td><%= item.orderQuantity %></td>
+        <td><%= item.orderPrice %> kr</td>
+        <td><%= itemTotal %> kr</td>
+      </tr>
+    <% }); %>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td colspan="3" style="text-align: right;"><strong>Totalt Pris:&nbsp </strong></td>
+      <td><strong><%= totalSum %> kr</strong></td>
+    </tr>
+  </tfoot>
+</table>
+<h3 class="check-out-text-over frist-table-under-640px">Orderbekräftelse</h3>
+<table class="check-out-table-mobile">
+  <% let totalSumMobile = 0; %>
+  <% order_confirmation.forEach(item => { 
+       const itemTotal = item.orderQuantity * item.orderPrice;
+       totalSumMobile += itemTotal;
+  %>
+    <tr>
+      <td><%= item.orderQuantity %></td>
+      <td>x&nbsp;<%= item.orderproductName %></td>
+      <td><%= itemTotal %> kr</td>
+    </tr>
+  <% }); %>
+  <tr>
+    <td colspan="2"><strong>Totalt Pris:</strong></td>
+    <td><strong><%= totalSumMobile %> kr</strong></td>
+  </tr>
+</table>
+      <h3>Leveransinformation</h3>
+      <% if (order_confirmation.length > 0) { %>
+        <p><strong>Namn:</strong> <%= order_confirmation[0].customerFirstname %> <%= order_confirmation[0].customerLastname %></p>
+        <p><strong>Email:</strong> <%= order_confirmation[0].customerEmail %></p>
+        <p><strong>Adress:</strong> <%= order_confirmation[0].customerStreet %>, <%= order_confirmation[0].customerPostalCode %> <%= order_confirmation[0].customerCity %></p>
+      <% } %>
+
+      <div class="button-product-details">
+        <a href="/">
+          <button class="check-out-button" type="button">Fortsätt handla</button>
+        </a>
+      </div>
+    </div>
+</main>

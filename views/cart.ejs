@@ -1,0 +1,202 @@
+
+    <link rel="stylesheet" href="/stylesheets/styles.css" />
+    <link rel="stylesheet" href="/stylesheets/check-out-style.css" />
+
+<main>
+    <!-- Mobile table -->
+    <h3 class="check-out-text-over frist-table-under-640px">Varukorgen</h3>
+    <table class="check-out-table-mobile">
+      <% if (cartItems && cartItems.length > 0) { %>
+        <% let totalSumMobile = 0; %>
+        <% cartItems.forEach(item => {
+          const itemTotal = item.Cart_quantity * item.productsprice;
+          totalSumMobile += itemTotal;
+        %>
+        <tr>
+          <td>
+            <form action="/cart/update" method="POST">
+              <input type="hidden" name="Cart_productBody_id" value="<%= item.Cart_product_id %>">
+              <select name="Cart_quantityBody" onchange="this.form.submit()">
+                <% for (let i = 1; i <= 10; i++) { %>
+                  <option value="<%= i %>" <%= item.Cart_quantity == i ? 'selected' : '' %>><%= i %></option>
+                <% } %>
+              </select>
+            </form>
+          </td>
+          <td>x&nbsp;<%= item.productstName %></td>
+          <td><%= item.productsprice * item.Cart_quantity %> SEK</td>
+          <td>
+            <form action="/cart/delete" method="POST">
+              <input type="hidden" name="Cart_productBody_id" value="<%= item.Cart_product_id %>">
+              <button>Delete</button>
+            </form>
+          </td>
+        </tr>
+        <% }); %>
+        <tr>
+          <td colspan="2"><strong>Totalt Pris:</strong></td>
+          <td><strong><%= totalSumMobile %> SEK</strong></td>
+        </tr>
+      <% } else { %>
+        <tr>
+          <td colspan="3">Din kundvagn är tom.</td>
+        </tr>
+      <% } %>
+    </table>
+
+    <!-- Desktop table -->
+    <h3 class="check-out-text-over frist-table-over-640px">Varukorgen</h3>
+    <table class="check-out-table-large-screen">
+      <thead>
+        <tr>
+          <th>Produkt</th>
+          <th>Antal</th>
+          <th>Pris</th>
+          <th>Totalt</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% if (cartItems && cartItems.length > 0) { %>
+          <% let totalSumDesktop = 0; %>
+          <% cartItems.forEach(item => {
+            const itemTotal = item.Cart_quantity * item.productsprice;
+            totalSumDesktop += itemTotal;
+          %>
+          <tr>
+            <td><%= item.productstName %></td>
+            <td>
+              <form action="/cart/update" method="POST">
+                <input type="hidden" name="Cart_productBody_id" value="<%= item.Cart_product_id %>">
+                <select name="Cart_quantityBody" onchange="this.form.submit()">
+                  <% for (let i = 1; i <= 10; i++) { %>
+                    <option value="<%= i %>" <%= item.Cart_quantity == i ? 'selected' : '' %>><%= i %></option>
+                  <% } %>
+                </select>
+              </form>
+            </td>
+            <td><%= item.productsprice %> kr</td>
+            <td><%= item.productsprice * item.Cart_quantity %> kr</td>
+            <td>
+              <form action="/cart/delete" method="POST">
+                <input type="hidden" name="Cart_productBody_id" value="<%= item.Cart_product_id %>">
+                <button>Delete</button>
+              </form>
+            </td>
+          </tr>
+          <% }); %>
+          <tr>
+            <td colspan="3" style="text-align: right;"><strong>Totalt Pris:</strong></td>
+            <td><strong><%= totalSumDesktop %> kr</strong></td>
+            <td></td>
+          </tr>
+        <% } else { %>
+          <tr>
+            <td colspan="4">Din kundvagn är tom.</td>
+          </tr>
+        <% } %>
+      </tbody>
+    </table>
+
+    <div >
+      <a href="/kassa">
+        <button class="check-out-button" type="button">Till Kassan</button>
+      </a>
+    </div>
+
+    <!-- Extra info -->
+    <div class="container-extra-info">
+      <div class="extra-info">
+        <nav>🚚 Gratis frakt</nav>
+        <nav>🔄 Expressfrakt</nav>
+        <nav>💳 Säkra betalningar</nav>
+        <nav>📰 Nyheter varje dag</nav>
+      </div>
+    </div>
+
+    <!--accordion for mobile -->
+
+    <div class="accordion-mobile">
+      <input type="checkbox" id="Mina-Sidor" style="display: none" />
+      <label for="Mina-Sidor">Mina Sidor</label>
+      <div class="content-accordion-mobile">
+        <div><a href="#">Mina Ordrar</a></div>
+        <div><a href="admin.html">Mitt Konto</a></div>
+      </div>
+
+      <input type="checkbox" id="Shopping" style="display: none" />
+      <label for="Shopping">Shopping</label>
+      <div class="content-accordion-mobile">
+        <div><a href="#">Vinterjackor</a></div>
+        <div><a href="#">Puferjackor</a></div>
+        <div><a href="#">Kappa</a></div>
+        <div><a href="#">Trenchcoats</a></div>
+      </div>
+
+      <input type="checkbox" id="Kundtjänst" style="display: none" />
+      <label for="Kundtjänst">Kundtjänst</label>
+    </div>
+    <!-- end of accordion mobile -->
+
+    <!-- accordion for biggar screen -->
+
+    <div class="main-container-accordion">
+      <div class="left-container-accordion">
+        <div>
+          <nav>
+            <h2>Shopping</h2>
+          </nav>
+        </div>
+
+        <div>
+          <nav>
+            <a href="#"> Vinterjackor </a>
+          </nav>
+        </div>
+
+        <div>
+          <nav>
+            <a href="#"> Puferjackor </a>
+          </nav>
+        </div>
+
+        <div>
+          <nav>
+            <a href="#"> Kappa </a>
+          </nav>
+        </div>
+
+        <div>
+          <nav>
+            <a href="#"> Trenchcoats </a>
+          </nav>
+        </div>
+      </div>
+
+      <div class="right-container-accordion">
+        <div>
+          <nav>
+            <h2>Mina Sidor</h2>
+          </nav>
+        </div>
+
+        <div>
+          <nav>
+            <a href="#"> Mina Ordrar </a>
+          </nav>
+        </div>
+
+        <div>
+          <nav>
+            <a href="admin.html"> Mitt Konto </a>
+          </nav>
+        </div>
+      </div>
+    </div>
+    <!-- end of accordion for biggar screen -->
+    <footer>
+      © Somar Awwad
+      <br />
+      0739373714
+    </footer>
+    </main>

@@ -1,0 +1,40 @@
+<% products_veiwIndex.forEach(product => { %>
+  <% if (product.products_is_spots == 0 && product.products_is_hero == 0) { %>
+    <div class="product-all-other-card">
+      <input type="checkbox" class="heart-checkbox" />
+      <label class="heart-container"></label>
+      <a href="/products/<%= product.id %>">
+        <div>
+          <img src="<%= product.productImage %>" alt="tält image" class="product-image"/>
+        </div>
+        <!-- show news if less than 7 days -->
+<%
+          let ProductGrid_displayedAt = null;
+          let ProductGrid_DaysAgo = new Date();
+          const ProductGrid_daysNews = 7; // Number of days to show news
+          ProductGrid_DaysAgo.setDate(ProductGrid_DaysAgo.getDate() - ProductGrid_daysNews);
+
+          if (product.products_displayed_at != null) {
+            ProductGrid_displayedAt = new Date(product.products_displayed_at);
+            console.log("7 days ago:", ProductGrid_DaysAgo);
+            console.log("Displayed at:", ProductGrid_displayedAt + 'asdsa'+product.products_displayed_at);
+
+             console.log(new Date().toISOString().slice(0, 10));
+          }
+        %>
+
+        <% if (ProductGrid_displayedAt >= ProductGrid_DaysAgo)  { %>
+          <div class="containerLatest-news">
+            
+            <div class="last-news-style">Nyhet</div>
+            <div class="Latest-news">JUST NOW  <br />50% discount</div>
+          </div>
+        <% } %>
+ <!--   End of show news if less than 7 days-->
+        <p><%= product.productstName %></p>
+        <p><%= product.productsprice %> SEK</p>
+        <p><%= product.productstype %></p>
+      </a>
+    </div>
+  <% } %>
+<% }) %>
