@@ -3,6 +3,13 @@ var express = require("express");
 var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
+const fs = require("fs");
+
+const dbDir = path.join(__dirname, "data");
+if (!fs.existsSync(dbDir)) {
+  fs.mkdirSync(dbDir);
+}
+
 
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
