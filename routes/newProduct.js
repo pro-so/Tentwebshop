@@ -5,9 +5,7 @@ const Database = require("better-sqlite3");
 const multer = require("multer");
 const path = require("path");
 
-const db = new Database(__dirname + "/../data/products-manager.db", {
-  verbose: console.log
-});
+const db = new Database(path.join(__dirname, "../data/products-manager.db"));
 
 //  Slugify function
 function slugify(text) {

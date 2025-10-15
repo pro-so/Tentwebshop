@@ -4,9 +4,8 @@ var router = express.Router();
 var Database = require("better-sqlite3");
 const e = require("express");
 
-var db = new Database(__dirname + "./../data/products-manager.db", {
-  verbose: console.log,
-});
+const path = require("path");
+const db = new Database(path.join(__dirname, "../data/products-manager.db"));
 
 try {
   const test = db.prepare("SELECT COUNT(*) FROM products").get();

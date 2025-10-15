@@ -2,7 +2,9 @@ const express = require("express");
 const router = express.Router();
 
 const Database = require("better-sqlite3");
-const db = new Database(__dirname + "/../data/products-manager.db");
+const path = require("path");
+const db = new Database(path.join(__dirname, "../data/products-manager.db"));
+
 
 // GET: Visa varukorgen
 router.get("/kassa", (req, res) => {
